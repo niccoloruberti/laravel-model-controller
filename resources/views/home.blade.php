@@ -14,15 +14,17 @@
 <main>
     <div class="container">
         <div class="row">
-            @foreach($comics as $comic)
+            @foreach($comics as $id => $comic)
             <div class="col-3 my-3">
                 <div class="content h-100">
+                    <a href="{{ route('show', $comic->id) }}">
                     <div class="card h-100">
                         <img src="{{$comic['thumb']}}">
                         <div class="card-body">
                             <h5 class="card-title">{{$comic['title']}}</h5>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
             @endforeach
